@@ -10,10 +10,13 @@
     "watch": "vue-cli-service serve"
   },
   "dependencies": {
+    "@kouts/vue-modal": "^2.0.1",
+    "@vue/composition-api": "^1.0.0-beta.18",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
     "vue": "^2.6.12",
+    "vue-json-viewer": "^2.2.15",
     "vue-router": "^3.4.3",
     "vuex": "^3.4.0"
   },
