@@ -11,9 +11,30 @@
 
 <script>
 import '@/scss/app.scss';
-import { reactive, toRefs } from '@vue/composition-api';
+import { reactive, toRefs, onMounted } from '@vue/composition-api';
+import { dataset1 } from '@/data/data';
 
 export default {
-  //
+  setup(props, context) {
+    const test = reactive({
+      name: 'George'
+    });
+    const test2 = reactive({
+      name: 'Giannis'
+    });
+    onMounted(() => {
+      context.root.debugLog('mpla');
+      setTimeout(() => {
+        context.root.debugLog(test2);
+      }, 2000);
+      setTimeout(() => {
+        context.root.debugLog('Dataset:', dataset1);
+      }, 3000);
+    });
+    return {
+      test: toRefs(test),
+      test2: toRefs(test2)
+    };
+  }
 };
 </script>

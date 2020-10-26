@@ -4,19 +4,18 @@
       Log
     </div>
     <modal v-model="popupShow" title="Debug Log" modal-class="debug-console-popup">
-      <div class="row">
-        <div class="col-sm-12">
-          <div v-for="(entry, index) in log" :key="index">
-            <json-viewer :value="entry" :expand-depth="5" copyable boxed sort></json-viewer>
-          </div>
-        </div>
+      <div v-for="(entry, index) in entries" :key="index" class="debug-console-entry">
+        <label>{{ entry.name }}</label>
+        <json-viewer :value="entry.data" :expand-depth="5" copyable boxed sort></json-viewer>
+      </div>
+      <div v-if="entries.length === 0">
+        Log is empty
       </div>
     </modal>
   </div>
 </template>
 
 <script>
-import { reactive, toRefs } from '@vue/composition-api';
 import Modal from '@kouts/vue-modal';
 import JsonViewer from 'vue-json-viewer';
 import '@kouts/vue-modal/dist/vue-modal.css';
@@ -28,23 +27,25 @@ export default {
   },
   props: {
     log: {
-      type: Array,
+      type: [Array, String],
       default: () => []
     }
   },
-  setup() {
-    const state = reactive({
-      popupShow: false
-    });
-
-    const openPopup = () => {
-      state.popupShow = true;
-    };
-
+  data() {
     return {
-      ...toRefs(state),
-      openPopup
+      popupShow: false
     };
+  },
+  computed: {
+    entries() {
+      const res = this.log;
+      return res;
+    }
+  },
+  methods: {
+    openPopup() {
+      this.popupShow = true;
+    }
   }
 };
 </script>
@@ -57,11 +58,15 @@ export default {
 
 .debug-console-trigger {
     background: #fa5838;
-    padding: 12px 20px;
+    padding: 12px 12px;
     color: #fff;
     position: absolute;
     top: 30%;
     right: 0px;
     cursor: pointer;
+}
+
+.debug-console-entry {
+  margin-bottom: 10px;
 }
 </style>
