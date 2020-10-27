@@ -16,6 +16,7 @@ import { dataset1 } from '@/data/data';
 
 export default {
   setup(props, context) {
+    console.log('debug:hello world', { test: 'hello' });
     const test = reactive({
       name: 'George'
     });
