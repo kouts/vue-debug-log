@@ -9,12 +9,18 @@ export default {
     const instance = new ComponentClass().$mount('#' + div.id);
     instance._props.log = [];
 
-    window.debugLog = function(arg1, arg2) {
-      const toLog = {
-        name: typeof arg1 === 'string' && arg2 ? arg1 : '',
-        data: arg2 || arg1
-      };
-      instance._props.log.push(toLog);
+    window.debugLog = function(...args) {
+      const name = typeof args[0] === 'string' && args.length > 1 ? args[0] : '';
+      if (name) {
+        args.shift();
+      }
+      for (let index = 0; index < args.length; index++) {
+        const toLog = {
+          name: index === 0 && name ? name : '',
+          data: args[index]
+        };
+        instance._props.log.push(toLog);
+      }
     };
 
     // Override console.log in case first argument starts with "debug:"
