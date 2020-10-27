@@ -9,7 +9,7 @@ export default {
     const instance = new ComponentClass().$mount('#' + div.id);
     instance._props.log = [];
 
-    Vue.prototype.debugLog = function(arg1, arg2) {
+    window.debugLog = function(arg1, arg2) {
       const toLog = {
         name: typeof arg1 === 'string' && arg2 ? arg1 : '',
         data: arg2 || arg1

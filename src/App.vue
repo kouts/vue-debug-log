@@ -23,12 +23,12 @@ export default {
       name: 'Giannis'
     });
     onMounted(() => {
-      context.root.debugLog('mpla');
+      debugLog('mpla');
       setTimeout(() => {
-        context.root.debugLog(test2);
+        debugLog(test2);
       }, 2000);
       setTimeout(() => {
-        context.root.debugLog('Dataset:', dataset1);
+        debugLog('Dataset:', dataset1);
       }, 3000);
     });
     return {

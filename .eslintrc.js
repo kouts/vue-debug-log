@@ -10,6 +10,9 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
+  globals: {
+    'debugLog': true
+  },  
   rules: {
     // Vue-cli
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
