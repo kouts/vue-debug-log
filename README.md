@@ -1,4 +1,6 @@
-# vue-starter-template
+# vue-debug-log
+
+A Vue component to facilitate debugging large data objects.
 
 ## Project setup
 ```
@@ -10,17 +12,7 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Builds dist files
 ```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run build-lib
 ```
