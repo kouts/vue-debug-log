@@ -7,7 +7,10 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "watch": "vue-cli-service serve"
+    "watch": "vue-cli-service serve",
+    "build-lib-dist": "vue-cli-service build --target lib --name debugLog ./src/components/debugLog.js",
+    "build-lib-copy": "cp ./dist/*.* ./demo/dist/",
+    "build-lib": "npm run build-lib-dist && npm run build-lib-copy"
   },
   "dependencies": {
     "@kouts/vue-modal": "^2.0.1",

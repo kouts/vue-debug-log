@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/dist/demo.css">
+    <link rel="stylesheet" href="/dist/debugLog.css">
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>    
+    <script src="/dist/debugLog.umd.js"></script>
+    <title>DebugLog demo</title>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1>{{ message }}</h1>
+    </div>
+
+    <script type="text/javascript">
+      Vue.use(debugLog.default);
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'DebugLog demo',
+          payload: {
+            "glossary": {
+              "title": "example glossary",
+              "GlossDiv": {
+                "title": "S",
+                "GlossList": {
+                  "GlossEntry": {
+                    "ID": "SGML",
+                    "SortAs": "SGML",
+                    "GlossTerm": "Standard Generalized Markup Language",
+                    "Acronym": "SGML",
+                    "Abbrev": "ISO 8879:1986",
+                    "GlossDef": {
+                      "para": "A meta-markup language, used to create markup languages such as DocBook.",
+                      "GlossSeeAlso": [
+                        "GML",
+                        "XML"
+                      ]
+                    },
+                    "GlossSee": "markup"
+                  }
+                }
+              }
+            }
+          }
+        },
+        mounted: function() {
+          debugLog(this.payload);
+        }
+      });
+    </script>
+
+  </body>
+</html>
