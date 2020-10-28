@@ -1,7 +1,16 @@
 {
   "name": "vue-debug-log",
+  "description": "A Vue component to facilitate debugging large data objects",
   "version": "0.1.0",
-  "private": true,
+  "author": "Giannis Koutsaftakis",
+  "license": "MIT",
+  "repository": "https://github.com/kouts/vue-debug-log",
+  "keywords": [
+    "vue",
+    "component",
+    "debug",
+    "json"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
