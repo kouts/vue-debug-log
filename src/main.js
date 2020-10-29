@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import VueCompositionAPI from '@vue/composition-api';
-import debugLog from '@/components/debugLog';
+import { debugLogPlugin } from '@/components/debugLog';
 import App from './App.vue';
 
 Vue.use(VueCompositionAPI);
-Vue.use(debugLog);
+Vue.use(debugLogPlugin);
 Vue.config.productionTip = false;
 
 new Vue({
