@@ -11,7 +11,7 @@
     "debug",
     "json"
   ],
-  "main": "dist/debugLogPlugin.common.js",
+  "main": "dist/debugLogPlugin.umd.js",
   "files": [
     "dist/*",
     "src/*",
