@@ -82,7 +82,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "fb15");
+/******/ 	return __webpack_require__(__webpack_require__.s = "fae3");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2600,12 +2600,15 @@ module.exports = function (key) {
 
 /***/ }),
 
-/***/ "fb15":
+/***/ "fae3":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "debugLogPlugin", function() { return /* reexport */ debugLogPlugin; });
 
 // CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/setPublicPath.js
 // This file is imported into lib/wc client bundles.
@@ -2634,7 +2637,7 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.starts-with.js
 var es_string_starts_with = __webpack_require__("2ca0");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"714235b4-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DebugLog.vue?vue&type=template&id=f06a4172&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"11ef0846-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/DebugLog.vue?vue&type=template&id=f06a4172&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('div',{staticClass:"debug-console-trigger",on:{"click":_vm.openPopup}},[_vm._v(" Log ")]),_c('modal',{attrs:{"title":"Debug Log","modal-class":"debug-console-popup"},model:{value:(_vm.popupShow),callback:function ($$v) {_vm.popupShow=$$v},expression:"popupShow"}},[_vm._l((_vm.entries),function(entry,index){return _c('div',{key:index,staticClass:"debug-console-entry"},[_c('label',[_vm._v(_vm._s(entry.name))]),_c('json-viewer',{attrs:{"value":entry.data,"expand-depth":5,"copyable":"","boxed":"","sort":""}})],1)}),(_vm.entries.length === 0)?_c('div',[_vm._v(" Log is empty ")]):_vm._e()],2)],1)}
 var staticRenderFns = []
 
@@ -2832,7 +2835,7 @@ var component = normalizeComponent(
 // CONCATENATED MODULE: ./src/components/debugLog.js
 
 
-/* harmony default export */ var debugLog = ({
+var debugLogPlugin = {
   install: function install(Vue) {
     var div = document.createElement('div');
     div.id = 'debug-console';
@@ -2879,11 +2882,9 @@ var component = normalizeComponent(
       }
     };
   }
-});
-// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib.js
+};
+// CONCATENATED MODULE: ./node_modules/@vue/cli-service/lib/commands/build/entry-lib-no-default.js
 
-
-/* harmony default export */ var entry_lib = __webpack_exports__["default"] = (debugLog);
 
 
 
@@ -2917,5 +2918,5 @@ module.exports = NATIVE_SYMBOL
 
 /***/ })
 
-/******/ })["default"];
-//# sourceMappingURL=debugLog.common.js.map
+/******/ })["debugLogPlugin"];
+//# sourceMappingURL=debugLogPlugin.common.js.map

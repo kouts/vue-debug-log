@@ -9,7 +9,7 @@
 
     <!-- JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>    
-    <script src="/dist/debugLog.umd.js"></script>
+    <script src="/dist/debugLogPlugin.umd.js"></script>
     <title>DebugLog demo</title>
   </head>
   <body>
@@ -18,7 +18,7 @@
     </div>
 
     <script type="text/javascript">
-      Vue.use(debugLog);
+      Vue.use(debugLogPlugin);
       var app = new Vue({
         el: '#app',
         data: {

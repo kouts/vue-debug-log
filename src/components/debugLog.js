@@ -1,6 +1,6 @@
 import DebugLog from '@/components/DebugLog.vue';
 
-export default {
+export const debugLogPlugin = {
   install(Vue) {
     const div = document.createElement('div');
     div.id = 'debug-console';
